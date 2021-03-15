@@ -18,7 +18,7 @@ const ProductComponent =  ({id}: Props) => {
     return (
         <div className="products">
             <h1 className="products-h1">Producto: {id}</h1>
-            <img className="products-img" src={state.image} alt="image"></img>
+            <img className="products-img" src={state.image} alt="tractor"></img>
         </div>
     );
 }
