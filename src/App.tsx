@@ -11,8 +11,10 @@ function App() {
 					<Route exact path="/">
 						<Redirect to="/product/1"/>
 					</Route>
+					<Route exact path="/product">
+						<Redirect to="/product/1"/>
+					</Route>
 					<Route path="/product/:id" render={(props) => {
-						console.log(props);
 						return (
 							<ProductComponent {
 								...props.match.params
