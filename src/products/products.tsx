@@ -1,16 +1,20 @@
 import React from 'react';
 import './products.css';
 
-const productComponent =  () => {
+import image from './porsche.svg';
 
-    
+export interface Props {
+	id: string
+}
+
+const ProductComponent =  ({id}: Props) => {
 
     return (
-        <div className="products"> 
-            <h1>Producto: </h1>
-            <img src="./porsche.svg"></img>
+        <div className="products">
+            <h1>Producto: {id}</h1>
+            <img src={image}></img>
         </div>
     );
 }
 
-export default productComponent;
+export default ProductComponent;
