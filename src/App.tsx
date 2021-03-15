@@ -12,6 +12,7 @@ function App() {
 						<Redirect to="/product/1"/>
 					</Route>
 					<Route path="/product/:id" render={(props) => {
+						console.log(props);
 						return (
 							<ProductComponent {
 								...props.match.params
@@ -29,6 +30,9 @@ function App() {
 						</li>
 						<li>
 							<Link to="/product/2">Second Product</Link>
+						</li>
+						<li>
+							<Link to="/product/3">Third Product</Link>
 						</li>
 					</ul>
 				</nav>
