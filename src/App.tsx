@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
-import ProductComponent from './products/products';
 import './App.css';
+import ProductComponent from './products/products';
 
 function App() {
 	const showMenu = process.env.REACT_APP_SHOW_MENU !== 'false';
-	console.log(showMenu);
 	return (
 		<div className="App">
 			<Router>
@@ -27,17 +26,16 @@ function App() {
 				</nav>
 				<Switch>
 					<Route exact path="/">
-						<Redirect to="/products/1"/>
+						<Redirect to="/products"/>
 					</Route>
-					<Route exact path="/products">
-						<Redirect to="/products/1"/>
-					</Route>
-					<Route path="/products/:id" render={(props) => {
-						return (
-							<ProductComponent {
-								...props.match.params
-							} />
-						);
+					<Route exact path="/products" render={(props) => {
+						const params = props.location.search.replace('?', '').split('&');
+						const config = params.reduce((acc: any, param: string) => {
+							const paramParts = param.split('=');
+							acc[paramParts[0]] = paramParts[1];
+							return acc;
+						}, {});
+						return (<ProductComponent {...config} />);
 					}}/>
 				</Switch>
 			</Router>

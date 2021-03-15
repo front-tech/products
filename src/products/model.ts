@@ -1,5 +1,5 @@
 export interface Props {
-	id: string
+	product: string
 }
 
 export interface Images {
