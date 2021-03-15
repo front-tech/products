@@ -3,5 +3,5 @@ export interface Props {
 }
 
 export interface Images {
-	[key: string]: string
+	[key: string]: any
 }

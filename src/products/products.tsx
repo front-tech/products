@@ -3,9 +3,9 @@ import { Images, Props } from './model';
 import './products.css';
 
 const NAMES: Images = {
-	1: 'Tractor 1',
-	2: 'Tractor 2',
-	3: 'Tractor 3'
+	1: process.env.REACT_APP_T1,
+	2: process.env.REACT_APP_T2,
+	3: process.env.REACT_APP_T3
 };
 
 const ProductComponent = ({id}: Props) => {
@@ -23,10 +23,21 @@ const ProductComponent = ({id}: Props) => {
 		}));
 	}, [id]);
 
+	const goToProduct = (event: any) => {
+		event.preventDefault();
+		const url = process.env.REACT_APP_CHECKOUT_URL;
+		window.location.href = `${url}?product=${id}`;
+	};
+
 	return (
 		<div className="products">
-			<h1 className="products-h1">Producto: {NAMES[id]}</h1>
-			<img className="products-img" src={state.image} alt={state.alt}></img>
+			<div className="products-container">
+				<h1 className="products-h1">Producto: {NAMES[id]}</h1>
+				<img className="products-img" src={state.image} alt={state.alt}></img>
+			</div>
+			<div className="products-payment">
+				<button onClick={goToProduct}>Comprar tractor</button>
+			</div>
 		</div>
 	);
 };

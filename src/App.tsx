@@ -4,25 +4,12 @@ import ProductComponent from './products/products';
 import './App.css';
 
 function App() {
+	const showMenu = process.env.REACT_APP_SHOW_MENU !== 'false';
+	console.log(showMenu);
 	return (
 		<div className="App">
 			<Router>
-				<Switch>
-					<Route exact path="/">
-						<Redirect to="/products/1"/>
-					</Route>
-					<Route exact path="/products">
-						<Redirect to="/products/1"/>
-					</Route>
-					<Route path="/products/:id" render={(props) => {
-						return (
-							<ProductComponent {
-								...props.match.params
-							} />
-						);
-					}}/>
-				</Switch>
-				<nav>
+				<nav style={{'display': showMenu ? 'block' : 'none'}}>
 					<ul>
 						<li>
 							<Link to="/">Home</Link>
@@ -38,6 +25,21 @@ function App() {
 						</li>
 					</ul>
 				</nav>
+				<Switch>
+					<Route exact path="/">
+						<Redirect to="/products/1"/>
+					</Route>
+					<Route exact path="/products">
+						<Redirect to="/products/1"/>
+					</Route>
+					<Route path="/products/:id" render={(props) => {
+						return (
+							<ProductComponent {
+								...props.match.params
+							} />
+						);
+					}}/>
+				</Switch>
 			</Router>
 		</div>
 	);

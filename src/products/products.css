@@ -1,6 +1,30 @@
 .products {
     max-width: 1024px;
     margin: 0 auto;
+    display: flex;
+}
+
+.products-container{
+
+}
+
+.products-payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+button{
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.5em;
+    border: none;
+    color: white;
+    border-radius: 0.25em;
+    background: rgb(75, 158, 204);
+    text-shadow: 0 1px 1px rgb(0 0 0.2);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
 }
 
 .products-h1 {
