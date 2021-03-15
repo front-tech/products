@@ -12,13 +12,13 @@ const ProductComponent =  ({id}: Props) => {
     });
 
     useEffect(() => {
-        setState({...state, image: `/${id}.svg`});
+        setState({image: `/${id}.svg`});
     }, [id]);
 
     return (
         <div className="products">
-            <h1>Producto: {id}</h1>
-            <img src={state.image}></img>
+            <h1 className="products-h1">Producto: {id}</h1>
+            <img className="products-img" src={state.image} alt="image"></img>
         </div>
     );
 }
