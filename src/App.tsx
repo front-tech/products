@@ -14,13 +14,13 @@ function App() {
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/products/1">First Product</Link>
+							<Link to="/products?product=1">First Product</Link>
 						</li>
 						<li>
-							<Link to="/products/2">Second Product</Link>
+							<Link to="/products?product=2">Second Product</Link>
 						</li>
 						<li>
-							<Link to="/products/3">Third Product</Link>
+							<Link to="/products?product=3">Third Product</Link>
 						</li>
 					</ul>
 				</nav>
