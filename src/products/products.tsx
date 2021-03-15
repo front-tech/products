@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './products.css';
 
-import im1 from './1.svg';
-import im2 from './2.svg';
-import im3 from './3.svg';
-
 export interface Props {
 	id: string
 }
-
-const IMAGES: any = {
-	'1': im1,
-	'2': im2,
-	'3': im3
-
-};
 
 const ProductComponent = ({id}: Props) => {
 
@@ -26,8 +15,8 @@ const ProductComponent = ({id}: Props) => {
 	useEffect(() => {
 		setState(state => ({
 			...state,
-			image: IMAGES[id],
-			alt: IMAGES[id]
+			image: require(`./${id}.svg`).default,
+			alt: require(`./${id}.svg`).default
 		}));
 	}, [id]);
 
