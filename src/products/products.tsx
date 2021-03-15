@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Images, Props } from './model';
 import './products.css';
 
-export interface Props {
-	id: string
-}
+const NAMES: Images = {
+	1: 'Tractor 1',
+	2: 'Tractor 2',
+	3: 'Tractor 3'
+};
 
 const ProductComponent = ({id}: Props) => {
 
@@ -22,7 +25,7 @@ const ProductComponent = ({id}: Props) => {
 
 	return (
 		<div className="products">
-			<h1 className="products-h1">Producto: {id}</h1>
+			<h1 className="products-h1">Producto: {NAMES[id]}</h1>
 			<img className="products-img" src={state.image} alt={state.alt}></img>
 		</div>
 	);
