@@ -9,12 +9,12 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path="/">
-						<Redirect to="/product/1"/>
+						<Redirect to="/products/1"/>
 					</Route>
-					<Route exact path="/product">
-						<Redirect to="/product/1"/>
+					<Route exact path="/products">
+						<Redirect to="/products/1"/>
 					</Route>
-					<Route path="/product/:id" render={(props) => {
+					<Route path="/products/:id" render={(props) => {
 						return (
 							<ProductComponent {
 								...props.match.params
@@ -28,13 +28,13 @@ function App() {
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/product/1">First Product</Link>
+							<Link to="/products/1">First Product</Link>
 						</li>
 						<li>
-							<Link to="/product/2">Second Product</Link>
+							<Link to="/products/2">Second Product</Link>
 						</li>
 						<li>
-							<Link to="/product/3">Third Product</Link>
+							<Link to="/products/3">Third Product</Link>
 						</li>
 					</ul>
 				</nav>
