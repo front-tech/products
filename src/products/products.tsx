@@ -2,10 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Images, Props } from './model';
 import './products.css';
 
-const NAMES: Images = {
-	1: process.env.REACT_APP_T1,
-	2: process.env.REACT_APP_T2,
-	3: process.env.REACT_APP_T3
+import t1 from './1.svg';
+import t2 from './2.svg';
+import t3 from './3.svg';
+
+const IMAGES: Images = {
+	1: {
+		name: process.env.REACT_APP_T1,
+		file: t1
+	},
+	2: {
+		name: process.env.REACT_APP_T2,
+		file: t2
+	},
+	3: {
+		name: process.env.REACT_APP_T3,
+		file: t3
+	}
 };
 
 const ProductComponent = ({product}: Props) => {
@@ -22,8 +35,8 @@ const ProductComponent = ({product}: Props) => {
 			return {
 				...state,
 				id,
-				image: require(`./${id}.svg`).default,
-				alt: require(`./${id}.svg`).default
+				image: IMAGES[id].file,
+				alt: IMAGES[id].name
 			};
 		});
 	}, [product]);
@@ -37,7 +50,7 @@ const ProductComponent = ({product}: Props) => {
 	return (
 		<div className="products">
 			<div className="products-container">
-				<h1 className="products-h1">Producto: {NAMES[state.id]}</h1>
+				<h1 className="products-h1">Producto: {IMAGES[state.id].name}</h1>
 				<img className="products-img" src={state.image} alt={state.alt}></img>
 			</div>
 			<div className="products-payment">
