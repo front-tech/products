@@ -23,7 +23,7 @@ module.exports = (webpackConfigEnv, argv) => {
 
 	return merge(defaultConfig, {
 		output: {
-			path: path.resolve(process.cwd(), "docs"),
+			path: path.resolve(process.cwd(), "docs/static"),
 		},
 		plugins: [
 			new Dotenv()
