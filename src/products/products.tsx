@@ -1,3 +1,4 @@
+import { navigateToUrl } from 'single-spa';
 import React, { useState, useEffect } from 'react';
 import { Images, Props } from './model';
 import './products.css';
@@ -44,7 +45,7 @@ const ProductComponent = ({product}: Props) => {
 	const goToProduct = (event: any) => {
 		event.preventDefault();
 		const url = process.env.REACT_APP_CHECKOUT_URL;
-		window.location.href = `${url}?product=${state.id}`;
+		navigateToUrl(`${url}?product=${state.id}`);
 	};
 
 	return (

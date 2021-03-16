@@ -10759,6 +10759,11 @@ single-spa-react@^4.1.1:
   resolved "https://registry.yarnpkg.com/single-spa-react/-/single-spa-react-4.1.1.tgz#c8aa84aec8b4bc5d1c1768dc0d4161713a7d6459"
   integrity sha512-3g/mnPnbxrcVUdupqxhYRnuV25+YC2acrlGTcA/rK6RjNBoMdMvenbN0K2aoypZYtB5dzIFkCUJMx7GUZChPYg==
 
+single-spa@^5.9.2:
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.2.tgz#4bb9a6eb6c90e3198b1549d8cdeb03241401b15b"
+  integrity sha512-XYl0rWAuTsdz8juLVMk7jjFZPIpv0TVECUh3+SNzReFJ8OfjndnUNvCSF6e5jAd7/8CNnKItpPgIsAvKvDvpHw==
+
 sirv@^1.0.7:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/sirv/-/sirv-1.0.11.tgz#81c19a29202048507d6ec0d8ba8910fda52eb5a4"
